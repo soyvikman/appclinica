@@ -50,14 +50,15 @@ const VerCitas = () => {
                     </thead>
                     <tbody>
                     {
-                        citas.map(function(cita){
-                            <tr key={cita[0]}>
-                                <th scope="row">{cita[1]}</th>
-                                <td>{cita[2]}</td>
-                                <td>{cita[3]}</td>
-                                <td>{cita[4]}</td>
+                        
+                       
+                            <tr key={citas[0]}>
+                                <th scope="row">{citas[1]}</th>
+                                <td>{citas[2]}</td>
+                                <td>{citas[3]}</td>
+                                <td>{citas[4]}</td>
                             </tr>
-                        })
+                        
                     }
                     </tbody>
                 </table>

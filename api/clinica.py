@@ -64,8 +64,8 @@ def sistema():
 def validarLogin():
     global cursor, conn
     try:
-        _username = request.form['inputUser']
-        _password = request.form['inputPassword']
+        _username = request.get_json['inputUser']
+        _password = request.get_json['inputPassword']
         conn = mysql.connect()
         cursor = conn.cursor()
         cursor.callproc('validaLogin', (_username,)) #VALIDAR USUARIO
@@ -75,11 +75,11 @@ def validarLogin():
                 session['user'] = data[0][0]
                 return redirect('/sistema')
             else:
-                return render_template('intranet.html', error='ERROR: Contraseña es Incorrecta')
+                return jsonify( error='ERROR: Contraseña es incorrecta')
         else:
-            return render_template('intranet.html', error='ERROR: Usuario No existe')
+            return jsonify(error='ERROR: Usuario no existe')
     except Exception as e:
-        return render_template('intranet.html', error=str(e))
+        return jsonify(error=str(e))
     finally:
         cursor.close()
         conn.close()
