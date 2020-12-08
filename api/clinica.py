@@ -64,16 +64,18 @@ def sistema():
 def validarLogin():
     global cursor, conn
     try:
-        _username = request.get_json['inputUser']
-        _password = request.get_json['inputPassword']
+        _username = request.get_json('inputUser')
+        _password = request.get_json('inputPassword')
+        username = _username['inputUser']
+        password = _password['inputPassword']
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.callproc('validaLogin', (_username,)) #VALIDAR USUARIO
+        cursor.callproc('validaLogin', (username,)) #VALIDAR USUARIO
         data = cursor.fetchall()
         if len(data) > 0:
-            if str(data[0][1]) == _password:
+            if str(data[0][1]) == password:
                 session['user'] = data[0][0]
-                return redirect('/sistema')
+                return  jsonify(usuario= data[0][0])
             else:
                 return jsonify( error='ERROR: Contraseña es incorrecta')
         else:
@@ -81,8 +83,9 @@ def validarLogin():
     except Exception as e:
         return jsonify(error=str(e))
     finally:
-        cursor.close()
-        conn.close()
+        print("nada")
+        #cursor.close()
+        #conn.close()
 
 @app.route('/mantUsuario')
 def mantUsuario():
@@ -107,7 +110,7 @@ def conseguirUsuario():
 def agregarUsuario():
     try:
         if session.get('user'):
-            _us = request.form['inputU']
+            _us = request.get_json['inputU']
             _pass = request.form['inputP']
             conn = mysql.connect()
             cursor = conn.cursor()
