@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+<meta charset="UTF-8">  
+    <title>Aplicación Web Clinica</title>
+
+
+  <script>
+    $(function(){
+        $.ajax({
+            url : '/buscarCitas',
+            type : 'GET',
+            success: function(res){
+                var div = $('<div>')
+                .attr('class', 'list-group')
+                .append($('<a>')
+                .attr('class', 'list-group-item active')
+                .append($('<h4>')
+                .attr('class', 'list-group-item-heading'),
+                $('<p>')
+                .attr('class', 'list-group-item-text')));
+                var wishObj = JSON.parse(res);
+                var wish = '';               
+                $.each(wishObj,function(index, value){
+                    wish = $(div).clone();
+                    $(wish).find('h4').text(value.Title);
+                    $(wish).find('p').text(value.Description);
+                    $('.jumbotron').append(wish);
+                });
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    });
+    </script>
+
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+   <div class="header">
+            <nav>
+ 			<ul>
+			  <li><a href="/index">Inicio</a></li>
+				  <li><a href="/conocenos">Conocenos</a></li>
+				<li><a href="/cita">Citas</a></li>
+				  <li><a href="/intranet">Intranet</a></li>
+				  
+			  </ul>
+    </nav>
+  </div>
+
+        <h1>Verificar Cita Medica</h1>
+        <form class="form-signin" action="/buscarCitas" method="post">
+        <label for="inputDNI" class="sr-only">DNI</label>
+        <input type="name" name="inputDNI" id="inputDNI" class="form-control" placeholder="Ingresar DNI" required autofocus>
+                 
+        <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Buscar</button>
+      </form>
+ 	
+      </div>
+   <h2>{{error}}</h2>
+       <div class="jumbotron">
+          <h1>Citas</h1>
+ 
+        </div> 
+ 
+    
+    </div>
+
+   
+  </body>
+</html>

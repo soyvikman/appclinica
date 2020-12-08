@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aplicación Web Clinica</title>
+ 
+    
+       
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+   
+         <ul>
+			  <li><a href="/index">Inicio</a></li>
+				  <li><a href="/conocenos">Conocenos</a></li>
+<li><a href="/cita">Citas</a></li>
+				  <li><a href="/intranet">Intranet</a></li>
+				  
+			  </ul>
+ 
+ 
+
+
+      
+        <h1>Inicia Sesión para ingresar el Sistema de la Clinica</h1>
+        <form class="form-signin" action="/validarLogin" method="post">
+        <label for="inputUser" class="sr-only">Usuario</label>
+        <input type="name" name="inputUser" id="inputUser" class="form-control" placeholder="Ingresar Usuario" required autofocus>
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Ingresar Contraseña" required>
+         
+        <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
+      </form>
+
+	 <h1>{{error}}</h1>
+
+<div class="jumbotron">
+      </div>
+ 
+       
+ 
+      <footer class="footer">
+        <p>&copy; Maestría en Informática - UNSA</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>

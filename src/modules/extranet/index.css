@@ -1,0 +1,13 @@
+.navbar-collapse {
+  height: 50px;
+  border-top: 1px solid #e9e7e7;
+  margin-top: 8px;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    height: auto;
+    border-top: none;
+    margin-top: auto;
+  }
+}
