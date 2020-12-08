@@ -1,9 +1,9 @@
 import React from 'react';
-import Topics from './router';
+import RouterIntranet from './router';
+
 const Intranet = () => (
   <>
-    intranet
-    <Topics />
+    <RouterIntranet />
   </>
 );
 
