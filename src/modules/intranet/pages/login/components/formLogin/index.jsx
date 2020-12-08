@@ -9,6 +9,7 @@ const FormLogin = () => {
 
   const onSubmit = (value) => {
     console.log(value);
+    history.push('/intranet/citas');
   }
   return (
     <div className="container">

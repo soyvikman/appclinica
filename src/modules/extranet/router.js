@@ -6,8 +6,9 @@ import {
 import Navbar from 'react-bootstrap/cjs/Navbar';
 import Home from './pages/home';
 import AboutUs from './pages/about';
-import Login from './pages/login';
+import Login from '../intranet/pages/login';
 import MedicalAppointment from './pages/medicalAppointment';
+import Intranet from '../intranet';
 
 import './index.css';
 
@@ -37,7 +38,7 @@ const RouterExtranet = () => {
               <Route path={`${url}/`} component={Home} exact/>
               <Route path={`${url}/nosotros`} component={AboutUs} />
               <Route path={`${url}/citas`} component={MedicalAppointment} />
-              <Route path={`${url}/intranet`} component={Login} />
+              <Route path={`${url}/intranet`} component={Intranet} />
             </>
           )
         }}
