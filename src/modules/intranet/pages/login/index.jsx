@@ -6,8 +6,7 @@ import './login.css';
 
 const Login = () => {
   return (
-    <div className="main">
-      <h1>Login</h1>
+    <div className="main d-flex align-items-center">
       <FormLogin />
     </div>
   );
