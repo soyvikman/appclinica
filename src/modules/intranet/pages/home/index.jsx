@@ -7,6 +7,10 @@ import Navbar from 'react-bootstrap/cjs/Navbar';
 import MedicalAppointment from '../medicalAppointment';
 
 const HomeIntranet = () => {
+
+  const logOut = () => {
+    console.log('cerrar sesión');
+  }
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -16,6 +20,7 @@ const HomeIntranet = () => {
           <div className="row w-100">
             <div className="col-12 d-flex justify-content-around">
               <Link className="link-item" to={`/intranet/citas`}>Citas</Link>
+              <p className="link-item" onClick={logOut}>Cerrar sesión</p>
             </div>
           </div>
         </Navbar.Collapse>
