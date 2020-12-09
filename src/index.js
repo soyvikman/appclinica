@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import storeConfig from './redux/store';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -7,7 +9,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={storeConfig}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

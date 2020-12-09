@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { saveDataMedicalAppointment } from '../../../../../../redux/actions/medicalAppoinments';
 import Layout from '../../../../components/Layout';
 import MaterialInput from '../../../../../../global/components/MaterialInput';
 import DropdownInput from '../../../../../../global/components/DropdownInput';
@@ -15,10 +17,12 @@ const documentList = [
 
 const StepOne = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
 
   const nextStep = (e) => {
     console.log(e);
+    dispatch(saveDataMedicalAppointment(e));
     history.push('/home/citas/step-2')
   }
 
