@@ -14,6 +14,12 @@ const departmentList = [
   { "textContent": "Tacna", "value": "04", "shortContent": "Tacna" }
 ];
 
+const hospitalList = [
+  { "textContent": "A", "value": "00", "shortContent": "A" },
+  { "textContent": "B", "value": "01", "shortContent": "B" },
+  { "textContent": "C", "value": "04", "shortContent": "C" }
+];
+
 const StepThree = () => {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
@@ -31,17 +37,17 @@ const StepThree = () => {
                 placeholder="Departamento"
                 selectOptions={departmentList}
                 name="department"
-                register={register}
+                register={register({required: true})}
               />
             </OutlinedSelectContainer>
           </div>
           <div className="col-12 col-md-6">
             <OutlinedSelectContainer>
               <MaterialSelect
-                placeholder="Especialidad"
-                selectOptions={departmentList}
-                name="specialty"
-                register={register}
+                placeholder="Centro de atención"
+                selectOptions={hospitalList}
+                name="hospital"
+                register={register({required: true})}
               />
             </OutlinedSelectContainer>
           </div>
@@ -50,14 +56,14 @@ const StepThree = () => {
           <MaterialInput
             className="col-12 col-md-6 mt-4 mt-md-0"
             name="specialty"
-            register={register}
+            register={register({required: true})}
             placeholder="Especialidad"
           />
           <MaterialInput
             className="col-12 col-md-6 mt-4 mt-md-0"
             placeholder="Fecha de atención"
             name="attentionDay"
-            register={register}
+            register={register({required: true})}
             type="date"
           />
         </div>

@@ -23,13 +23,13 @@ const StepTwo = () => {
             className="col-12"
             placeholder="Teléfono"
             name="phoneNumber"
-            register={register}
+            register={register({required: true, minLength: 9, maxLength: 12})}
           />
           <MaterialInput
             className="col-12 mt-3"
             placeholder="Correo electrónico"
             name="email"
-            register={register}
+            register={register({required: true, pattern: /^\S+@\S+$/i})}
           />
         </div>
         <div className="row">

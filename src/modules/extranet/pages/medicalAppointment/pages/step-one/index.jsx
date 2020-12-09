@@ -30,13 +30,13 @@ const StepOne = () => {
             className="col-12 col-md-6"
             placeholder="Nombres"
             name="name"
-            register={register}
+            register={register({required: true, maxLength: 100})}
           />
           <MaterialInput
             className="col-12 col-md-6 mt-4 mt-md-0"
             placeholder="Apellidos"
             name="lastName"
-            register={register}
+            register={register({required: true, maxLength: 100})}
           />
         </div>
         <div className="row d-flex justify-content-between">
@@ -47,10 +47,10 @@ const StepOne = () => {
               onChange={() => {}}
               capitalizeInput={2}
               name="document"
-              selectName="documentList"
+              selectName="typeDocument"
               placeholder="Tipo de documento"
-              registerInput={register}
-              registerSelect={register}
+              registerInput={register({required: true, maxLength: 20})}
+              registerSelect={register({required: true})}
             />
           </div>
           <div className="col-12 col-md-6 mt-4 mt-md-0">
@@ -62,7 +62,7 @@ const StepOne = () => {
                   type="radio"
                   name="isMinor"
                   value="si"
-                  ref={register}
+                  ref={register({required: true})}
                 />
                 <label className="form-check-label" htmlFor="isMinor">
                   Sí
@@ -74,7 +74,7 @@ const StepOne = () => {
                   type="radio"
                   name="isMinor"
                   value="no"
-                  ref={register}
+                  ref={register({required: true})}
                 />
                 <label className="form-check-label" htmlFor="isMinor">
                   No
@@ -88,7 +88,7 @@ const StepOne = () => {
             className="col-12 col-md-6 mt-4 mt-md-0"
             placeholder="Fecha de nacimiento"
             name="birthday"
-            register={register}
+            register={register({required: true})}
             type="date"
           />
         </div>
