@@ -20,13 +20,13 @@ const StepTwo = () => {
       <form className="mt-4" onSubmit={handleSubmit(nextStep)}>
         <div className="row d-flex justify-content-center">
           <MaterialInput
-            className="col-12 col-md-8"
+            className="col-12"
             placeholder="Teléfono"
             name="phoneNumber"
             register={register}
           />
           <MaterialInput
-            className="col-12 col-md-8 mt-3"
+            className="col-12 mt-3"
             placeholder="Correo electrónico"
             name="email"
             register={register}
@@ -34,7 +34,7 @@ const StepTwo = () => {
         </div>
         <div className="row">
           <div className="col-12 text-center mt-3">
-            <button className="btn btn-lg btn-skyblue" type="submit">Continuar</button>
+            <button className="btn btn-skyblue" type="submit">Continuar</button>
           </div>
         </div>
       </form>

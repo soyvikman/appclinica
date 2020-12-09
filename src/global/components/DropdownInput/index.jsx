@@ -98,7 +98,6 @@ export default function DropdownInput({
     <DropdownContainer style={containerStyles} noPadding={noPadding} percentageWidth={percentageWidth}>
         <div style={{ borderColor: inputColor }} className={`group ${className}`}>
            <MaterialSelect
-             fontFamily={'FS Emeric'}
              register={registerSelect}
              onChange={setSelectValue}
              initialValue={defaultValueSelect}

@@ -30,13 +30,12 @@ const FormLogin = () => {
     <div className="container">
       <div className="row d-flex justify-content-center">
         <div className="col-12 col-md-8">
-          <form className="card" onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="text-center mt-5">Login</h1>
+          <form className="card mx-width" onSubmit={handleSubmit(onSubmit)}>
+            <h1 className="text-center mt-5 title-login">Login</h1>
             <div className="card-body">
               <div className="row">
                 <div className="col-12">
                   <MaterialInput
-                    className="col-12 col-md-6"
                     placeholder="Usuario"
                     name="userName"
                     register={register}
@@ -44,7 +43,6 @@ const FormLogin = () => {
                 </div>
                 <div className="col-12 mt-3">
                   <MaterialInput
-                    className="col-12 col-md-6"
                     placeholder="Contraseña"
                     name="psw"
                     register={register}

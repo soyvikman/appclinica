@@ -38,7 +38,7 @@ const MaterialSelect = ({
 	selectOptions = [],
 	onChange,
 	placeholder,
-	fontFamily = 'Calibri',
+	fontFamily = 'sans-serif',
 	name = '',
 	initialValue,
 	register,

@@ -54,7 +54,7 @@ const StepOne = () => {
             />
           </div>
           <div className="col-12 col-md-6 mt-4 mt-md-0">
-            <p className="mt-3">Es menor de edad</p>
+            <p className="mt-3">Es menor de edad?</p>
             <div className="d-flex justify-content-between mx-5">
               <div className="form-check d-inline-block ml-4 ml-md-0">
                 <input
@@ -87,11 +87,14 @@ const StepOne = () => {
           <MaterialInput
             className="col-12 col-md-6 mt-4 mt-md-0"
             placeholder="Fecha de nacimiento"
+            name="birthday"
+            register={register}
+            type="date"
           />
         </div>
         <div className="row">
           <div className="col-12 text-center mt-3">
-            <button className="btn btn-lg btn-skyblue" type="submit">Continuar</button>
+            <button className="btn btn-skyblue" type="submit">Continuar</button>
           </div>
         </div>
       </form>
