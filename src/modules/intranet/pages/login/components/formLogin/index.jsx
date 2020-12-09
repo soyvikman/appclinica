@@ -45,6 +45,7 @@ const FormLogin = () => {
                   <MaterialInput
                     placeholder="Contraseña"
                     name="psw"
+                    type="password"
                     register={register}
                   />
                 </div>
