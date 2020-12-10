@@ -16,7 +16,7 @@ const MedicalAppointment = () => {
       })
       cambiarCitas(...llamadaCitas.data)
     }catch (error){
-      console.log(error.message)
+      cambiarCitas("Sin resultados")
     }
   }
 
@@ -70,6 +70,49 @@ console.log(citas.length)
         </Fragment>
     )
   }
+
+  if(citas === "Sin resultados"){
+    return (
+        <Fragment>
+          <form className="form-inline" onSubmit={funcionEnviar}>
+            <div className="form-group mb-2">
+              <label htmlFor="staticEmail2" className="sr-only">DNI</label>
+              <input type="text" readOnly className="form-control-plaintext" id="staticEmail2"
+                     value="Ingrese número de DNI"/>
+            </div>
+            <div className="form-group mx-sm-3 mb-2">
+              <label htmlFor="inputPassword2" className="sr-only"></label>
+              <input type="text" className="form-control" id="inputPassword2" value={dni} onChange={funcionCambiarDNI}/>
+            </div>
+            <button type="submit" className="btn btn-primary mb-2">Enviar</button>
+            <button onClick={borrarCampos} className="btn btn-danger mb-2">Limpiar campos</button>
+          </form>
+          <div>
+            <table className="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">Día</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Estado</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td>Sin resultados</td>
+                <td></td>
+                <td></td>
+              </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </Fragment>
+    )
+  }
+
   return (
     <Fragment>
       <div className="container">

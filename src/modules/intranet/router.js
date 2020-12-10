@@ -6,6 +6,7 @@ import {
 
 import Login from './pages/login';
 import HomeIntranet from './pages/home';
+import MedicalAppointment from "../extranet/pages/medicalAppointment";
 
 const IntranetRoute = () => {
   return (
@@ -16,6 +17,9 @@ const IntranetRoute = () => {
         </Route>
         <Route path='/intranet/citas'>
           <HomeIntranet />
+        </Route>
+        <Route path='/intranet/agregarcita'>
+          <MedicalAppointment />
         </Route>
       </Switch>
     </div>

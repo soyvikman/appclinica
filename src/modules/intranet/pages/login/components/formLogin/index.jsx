@@ -18,7 +18,7 @@ const FormLogin = () => {
       })
       if(!data.data.error){
         localStorage.setItem('usuario', JSON.stringify(data.data.usuario));
-        history.push('/intranet/citas');
+        history.push('/intranet/menu');
       } else {
         gettingLogingError({display: "block"})
       }
@@ -31,7 +31,7 @@ const FormLogin = () => {
       <div className="row d-flex justify-content-center">
         <div className="col-12 col-md-8">
           <form className="card mx-width" onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="text-center mt-5 title-login">Login</h1>
+            <h1 className="text-center mt-5 title-login">Acceso Intranet</h1>
             <div className="card-body">
               <div className="row">
                 <div className="col-12">
