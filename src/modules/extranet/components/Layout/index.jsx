@@ -42,7 +42,7 @@ const Layout = ({ step = 1, children }) => {
   })
 
   return (
-    <WhiteCard>
+    <WhiteCard className="mx-width">
       <MainTitle title="Agendar cita" />
 
       <ContainerStepper>

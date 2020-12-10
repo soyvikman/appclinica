@@ -3,10 +3,10 @@ import { allColors } from '../../../global/styles/index';
 import styled from 'styled-components';
 import { size } from '../../styles/Responsive';
 import './styles.css';
-const showPasswordIcon = 'shared/images/showPasswordIcon.svg';
-const hidePasswordIcon = 'shared/images/hidePasswordIcon.svg';
+import showPasswordIcon from '../../../shared/images/showPasswordIcon.svg';
+import hidePasswordIcon from  '../../../shared/images/hidePasswordIcon.svg';
 
-const InputBtn = styled.button`
+const InputBtn = styled.div`
   outline: none;
   position: relative;
   display: flex;

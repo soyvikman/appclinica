@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { saveDataMedicalAppointment } from '../../../../../../redux/actions/medicalAppoinments';
 import Layout from '../../../../components/Layout';
 import MaterialInput from '../../../../../../global/components/MaterialInput';
 import DropdownInput from '../../../../../../global/components/DropdownInput';
@@ -15,10 +17,12 @@ const documentList = [
 
 const StepOne = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
 
   const nextStep = (e) => {
     console.log(e);
+    dispatch(saveDataMedicalAppointment(e));
     history.push('/home/citas/step-2')
   }
 
@@ -30,13 +34,13 @@ const StepOne = () => {
             className="col-12 col-md-6"
             placeholder="Nombres"
             name="name"
-            register={register}
+            register={register({required: true, maxLength: 100})}
           />
           <MaterialInput
             className="col-12 col-md-6 mt-4 mt-md-0"
             placeholder="Apellidos"
             name="lastName"
-            register={register}
+            register={register({required: true, maxLength: 100})}
           />
         </div>
         <div className="row d-flex justify-content-between">
@@ -47,14 +51,14 @@ const StepOne = () => {
               onChange={() => {}}
               capitalizeInput={2}
               name="document"
-              selectName="documentList"
+              selectName="typeDocument"
               placeholder="Tipo de documento"
-              registerInput={register}
-              registerSelect={register}
+              registerInput={register({required: true, maxLength: 20})}
+              registerSelect={register({required: true})}
             />
           </div>
           <div className="col-12 col-md-6 mt-4 mt-md-0">
-            <p className="mt-3">Es menor de edad</p>
+            <p className="mt-3">Es menor de edad?</p>
             <div className="d-flex justify-content-between mx-5">
               <div className="form-check d-inline-block ml-4 ml-md-0">
                 <input
@@ -62,7 +66,7 @@ const StepOne = () => {
                   type="radio"
                   name="isMinor"
                   value="si"
-                  ref={register}
+                  ref={register({required: true})}
                 />
                 <label className="form-check-label" htmlFor="isMinor">
                   Sí
@@ -74,7 +78,7 @@ const StepOne = () => {
                   type="radio"
                   name="isMinor"
                   value="no"
-                  ref={register}
+                  ref={register({required: true})}
                 />
                 <label className="form-check-label" htmlFor="isMinor">
                   No
@@ -87,11 +91,14 @@ const StepOne = () => {
           <MaterialInput
             className="col-12 col-md-6 mt-4 mt-md-0"
             placeholder="Fecha de nacimiento"
+            name="birthday"
+            register={register({required: true})}
+            type="date"
           />
         </div>
         <div className="row">
           <div className="col-12 text-center mt-3">
-            <button className="btn btn-lg btn-skyblue" type="submit">Continuar</button>
+            <button className="btn btn-skyblue" type="submit">Continuar</button>
           </div>
         </div>
       </form>
