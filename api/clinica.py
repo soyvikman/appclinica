@@ -188,8 +188,9 @@ def agregarPaciente():
             _vig = request.form['inputVig']
             cursor.callproc('agregarPac', (_h, _ap, _am, _nom, _td, _nd, _ntel, _dir, _dis, _fn, _sex, _tseg, _vig))
             #AGREGAR A UN NUEVO PACIENTE
+            data = cursor.fetchall()
             conn.commit()
-            return redirect('/mantPaciente')
+            return jsonify(data)
     except Exception as e:
         return render_template('mantPaciente.html', error=str(e))
 
